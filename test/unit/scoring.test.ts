@@ -1,0 +1,2 @@
+import {it,expect} from 'vitest'; import {calculateScore,scoreLabel} from '../../src/shared/scoring';
+it('caps score and labels deterministically',()=>{const c=Array.from({length:10},()=>({category:'hard_to_cancel' as const,severity:5 as const,explanation:'x',quote:'x',verified:true as const})); expect(calculateScore(c)).toBe(100); expect(scoreLabel(33)).toBe('Düşük'); expect(scoreLabel(67)).toBe('Yüksek');});
